@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pryme Store | Soluções Digitais</title>
+
+<style>
+:root{
+  --bg:#07070a;
+  --card:#111118;
+  --neon:#9b00ff;
+  --neon-soft:#c77dff;
+  --text:#ffffff;
+  --muted:#b5b5b5;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body{
+  background:var(--bg);
+  color:var(--text);
+  scroll-behavior:smooth;
+}
+
+/* HEADER */
+header{
+  padding:90px 20px;
+  text-align:center;
+  background:
+    radial-gradient(circle at top, rgba(155,0,255,0.25), transparent 60%),
+    #000;
+}
+
+header h1{
+  font-size:2.8rem;
+  margin-bottom:15px;
+}
+
+header span{
+  color:var(--neon);
+}
+
+header p{
+  max-width:680px;
+  margin:0 auto 35px;
+  color:var(--muted);
+  font-size:1.15rem;
+}
+
+header .headline{
+  font-size:1.05rem;
+  color:var(--neon-soft);
+  margin-bottom:10px;
+  letter-spacing:1px;
+}
+
+/* BOTÕES */
+.btn{
+  display:inline-block;
+  padding:15px 38px;
+  border-radius:50px;
+  background:linear-gradient(135deg,var(--neon),#5a00ff);
+  color:#fff;
+  text-decoration:none;
+  font-weight:600;
+  box-shadow:0 0 25px rgba(155,0,255,.55);
+  transition:.3s;
+}
+
+.btn:hover{
+  transform:translateY(-3px);
+  box-shadow:0 0 40px rgba(155,0,255,.8);
+}
+
+/* SECTIONS */
+section{
+  padding:80px 20px;
+  max-width:1200px;
+  margin:auto;
+}
+
+section h2{
+  text-align:center;
+  font-size:2.2rem;
+  margin-bottom:15px;
+}
+
+.section-desc{
+  text-align:center;
+  color:var(--muted);
+  max-width:650px;
+  margin:0 auto 50px;
+  font-size:1.05rem;
+}
+
+/* CARDS */
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+}
+
+.card{
+  background:var(--card);
+  border-radius:22px;
+  padding:35px;
+  border:1px solid rgba(155,0,255,.18);
+  transition:.35s;
+  position:relative;
+  overflow:hidden;
+}
+
+.card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(120deg,transparent,rgba(155,0,255,.12),transparent);
+  opacity:0;
+  transition:.4s;
+}
+
+.card:hover::before{opacity:1;}
+
+.card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 0 35px rgba(155,0,255,.3);
+}
+
+.card h3{
+  color:var(--neon);
+  margin-bottom:15px;
+  font-size:1.3rem;
+}
+
+.card p{
+  color:var(--muted);
+  font-size:.98rem;
+  margin-bottom:25px;
+}
+
+/* PLANOS */
+.planos{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+}
+
+.plano{
+  background:linear-gradient(180deg,#120018,#08000d);
+  border-radius:24px;
+  padding:40px 30px;
+  text-align:center;
+  border:1px solid rgba(155,0,255,.3);
+}
+
+.plano h3{
+  color:var(--neon);
+  font-size:1.5rem;
+  margin-bottom:15px;
+}
+
+.preco{
+  font-size:1.6rem;
+  margin:15px 0;
+  color:#fff;
+}
+
+.plano ul{
+  list-style:none;
+  color:var(--muted);
+  margin-bottom:30px;
+}
+
+.plano li{
+  margin:10px 0;
+}
+
+/* CONFIANÇA */
+.trust{
+  text-align:center;
+  color:var(--muted);
+  font-size:.95rem;
+  margin-top:40px;
+}
+
+/* FOOTER */
+footer{
+  padding:35px;
+  text-align:center;
+  color:var(--muted);
+  font-size:.9rem;
+  border-top:1px solid rgba(155,0,255,.18);
+}
+
+/* BOTÃO TELEGRAM FLUTUANTE */
+.telegram-float{
+  position:fixed;
+  bottom:22px;
+  right:22px;
+  background:linear-gradient(135deg,#9b00ff,#5a00ff);
+  width:60px;
+  height:60px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  font-size:1.6rem;
+  text-decoration:none;
+  box-shadow:0 0 35px rgba(155,0,255,.8);
+  z-index:999;
+  transition:.3s;
+}
+
+.telegram-float:hover{
+  transform:scale(1.08);
+  box-shadow:0 0 50px rgba(155,0,255,1);
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="headline">ACESSO DIGITAL • ENTREGA RÁPIDA • SUPORTE REAL</div>
+  <h1><span>Pryme</span> Store</h1>
+  <p>Soluções digitais modernas para quem busca praticidade, estabilidade e uma experiência premium do início ao fim.</p>
+  <a href="#servicos" class="btn">Explorar serviços</a>
+</header>
+
+<section id="servicos">
+  <h2>Nossos Serviços</h2>
+  <p class="section-desc">
+    Serviços digitais organizados, com foco em qualidade, facilidade de acesso e atendimento direto.
+  </p>
+
+  <div class="cards">
+    <div class="card">
+      <h3>IPTV Premium</h3>
+      <p>Aplicativo de filme com tudo incluso + de 500k de filmes para você.</p>
+      <a href="https://t.me/PrymeStors" target="_blank" class="btn">Consultar planos</a>
+    </div>
+
+    <div class="card">
+      <h3>Painel de puxar Dados</h3>
+      <p>Painel para puxar dados, consulte numéro placa cpnj etc.</p>
+      <a href="https://t.me/PrymeStors" target="_blank" class="btn">Solicitar acesso</a>
+    </div>
+
+    <div class="card">
+      <h3>Streaming & Entretenimento</h3>
+      <p>Netflix, youcine, star+, disney, prime video, todas essas plataformas por apenas 15 reais a conta, dura 2 meses, não tem queda.</p>
+      <a href="https://t.me/PrymeStors" target="_blank" class="btn">Ver disponibilidade</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Por que escolher a Pryme?</h2>
+  <p class="section-desc">
+    Mais do que serviços, entregamos confiança, organização e suporte direto.
+  </p>
+
+  <div class="cards">
+    <div class="card">
+      <h3>Entrega Rápida</h3>
+      <p>Processo simples, sem complicação e com resposta ágil.</p>
+    </div>
+
+    <div class="card">
+      <h3>Atendimento Direto</h3>
+      <p>Contato direto via Telegram, sem intermediários.</p>
+    </div>
+
+    <div class="card">
+      <h3>Visual Premium</h3>
+      <p>Plataforma moderna, segura e fácil de navegar.</p>
+    </div>
+  </div>
+</section>
+
+<section id="planos">
+  <h2>Planos & Ofertas</h2>
+  <p class="section-desc">
+    Escolha a opção ideal para você e fale diretamente com nosso atendimento.
+  </p>
+
+  <div class="planos">
+    <div class="plano">
+      <h3>Básico</h3>
+      <p class="preco">Entre em contato pelo telegram.</p>
+      <ul>
+        <li>Acesso padrão</li>
+        <li>Suporte direto</li>
+        <li>Entrega digital</li>
+      </ul>
+      <a href="https://t.me/PrymeStors" target="_blank" class="btn">Falar no Telegram</a>
+    </div>
+
+    <div class="plano">
+      <h3>Premium</h3>
+      <p class="preco">Pacote completo com tudo incluso por apenas $55</p>
+      <ul>
+        <li>Acesso completo</li>
+        <li>Prioridade no suporte</li>
+        <li>Vantagens exclusivas</li>
+      </ul>
+      <a href="https://t.me/PrymeStors" target="_blank" class="btn">Quero o Premium</a>
+    </div>
+  </div>
+
+  <div class="trust">
+    🔒 Atendimento direto • ⚡ Resposta rápida • 💜 Experiência Pryme
+  </div>
+</section>
+
+<footer>
+  © 2026 Pryme Store — Todos os direitos reservados
+</footer>
+
+<!-- BOTÃO TELEGRAM FLUTUANTE -->
+<a href="https://t.me/PrymeStors" target="_blank" class="telegram-float">✈️</a>
+
+</body>
+</html>
